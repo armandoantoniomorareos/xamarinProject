@@ -1,0 +1,45 @@
+{
+	"_id": {
+		"oid": "3"
+	},
+	"game_name": "fifa",
+	"image_url": "https:\/\/drive.google.com\/uc?id=0BzpgCnXmnQZmZHVjRVZSNFJVSFU",
+	"players": [{
+		"usr_name": "usr1",
+		"score": 0,
+		"result": "won"
+	}, {
+		"usr_name": "usr2",
+		"score": 3,
+		"result": "won"
+	}, {
+		"usr_name": "usr3",
+		"score": 1,
+		"result": "lost"
+	},
+	{
+		"usr_name": "usr4",
+		"score": 10,
+		"result": "lost"
+	},
+	{
+		"usr_name": "usr1",
+		"score": 15,
+		"result": "won"
+	}, {
+		"usr_name": "usr2",
+		"score": 0,
+		"result": "won"
+	}, {
+		"usr_name": "usr3",
+		"score": 22,
+		"result": "lost"
+	},
+	{
+		"usr_name": "usr4",
+		"score": 10,
+		"result": "lost"
+	}
+	
+	]
+}

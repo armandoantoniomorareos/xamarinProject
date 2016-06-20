@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xam.NewMatchPage">
+  <StackLayout>
+    <Entry x:Name="userName" Placeholder="User name" />
+    <Entry x:Name="score" Placeholder="Score"/>
+    <Picker x:Name="resultPicker" Title ="Select result" SelectedIndexChanged="selectedIndexChanged">
+      <Picker.Items>
+        <x:String>Won</x:String>
+        <x:String>Lose</x:String>
+      </Picker.Items>
+    </Picker>
+    <Button x:Name="addNewMatchButton" Text="Add New Match" BackgroundColor="#6666ff" Clicked="addNewMatch"/>
+  </StackLayout>
+</ContentPage>

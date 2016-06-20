@@ -1,0 +1,22 @@
+{
+	"Games": [{
+			"_id": {
+				"oid": "2",
+				"Name": "fifa"
+			}
+		},
+
+		{
+			"_id": {
+				"oid": "3",
+				"Name": "futbolito"
+			}
+		}, {
+			"_id": {
+				"oid": "3",
+				"Name": "maquinita"
+			}
+		}
+	]
+
+}

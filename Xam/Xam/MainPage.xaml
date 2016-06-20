@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xam.MainPage">
+  <StackLayout>
+    
+    <ListView x:Name="GamesView" ItemTapped="onTap" SeparatorColor="#999999" RowHeight="60" SelectedItem="onSelection">
+      <ListView.ItemTemplate >
+        <DataTemplate>
+          <ViewCell>
+          
+            <ViewCell.ContextActions>
+               <MenuItem  Icon="delete1.png" Clicked ="delete" CommandParameter="{Binding .}" />
+            </ViewCell.ContextActions>
+               
+           <RelativeLayout BackgroundColor="#eeeeff" >
+                <Image x:Name="gameImage" Source="{Binding image_url}"  Scale=".95"
+                        RelativeLayout.XConstraint =
+                            "{ConstraintExpression Type=RelativeToParent,
+                                Property=X,
+                                Factor=1,
+                                Constant=+5}"/>
+                <Label x:Name="gameNameHeader" Text="Game Name:" TextColor="#888888" FontSize="8" 
+                           RelativeLayout.XConstraint =
+                            "{ConstraintExpression Type=RelativeToView,
+                                ElementName=gameImage,
+                                Property=X,
+                                Factor=1,
+                                Constant=+100}"
+                            RelativeLayout.YConstraint =
+                            "{ConstraintExpression Type=RelativeToParent,
+                                Property=Y,
+                                Factor=1,
+                                Constant=+10}"/>
+                <Label Text="{Binding game_name}" TextColor="#7777AA" FontSize="20" 
+                            RelativeLayout.XConstraint =
+                            "{ConstraintExpression Type=RelativeToView,
+                                ElementName=gameNameHeader,
+                                Property=X,
+                                Factor=1,
+                                Constant=0}"
+                             RelativeLayout.YConstraint =
+                            "{ConstraintExpression Type=RelativeToView,
+                                ElementName=gameNameHeader,
+                                Property=Y,
+                                Factor=1,
+                                Constant=10}"/>                  
+            
+            </RelativeLayout>
+            
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Button x:Name="add" Text="Add Game" Clicked="addGame" BackgroundColor="#6666ff"/>
+    <Button x:Name="logoutButton" Text="Logout" Clicked="logout" BackgroundColor="#ff66ff"/>
+  </StackLayout>
+</ContentPage>

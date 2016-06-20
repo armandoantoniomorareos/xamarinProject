@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xam.BestPlayer">
+  <ListView x:Name="BestPlayersList" >
+    <ListView.ItemTemplate >
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout BackgroundColor="#ccddff" Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+
+              <!--<Image Source="{Binding icon}" Scale=".8"/>-->
+              <Label Text="{Binding usr_name}" TextColor="#f35e20" FontSize="25"/>
+              <Label Text ="{Binding score}" HorizontalOptions="EndAndExpand"
+                     TextColor="#503026"/>
+              <!--<Label Text ="{Binding scoreUserTwo}" HorizontalOptions="EndAndExpand"
+                     TextColor="#503026"/>
+              <Label Text ="{Binding userTwo}" HorizontalOptions="EndAndExpand"
+                     TextColor="#503026"/>-->
+
+
+              <!--<Image Source="{Binding image}"/>
+              <Label Text="{Binding title}" TextColor="#f35e20" />
+              <Label Text ="{Binding subtittle}" HorizontalOptions="EndAndExpand" 
+                     TextColor="#503026"/>-->
+            </StackLayout>
+          </StackLayout>
+
+        </ViewCell>
+        <!--<TextCell Text="{Binding DisplayName}" TextColor="Green" Detail="Hooo"/>
+        <ImageCell Text=""-->
+      </DataTemplate>
+    </ListView.ItemTemplate>
+
+  </ListView>
+</ContentPage>

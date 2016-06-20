@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xam.NewUserDialog">
+  <StackLayout BackgroundColor="#333333"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Vertical"
+               Spacing="10"
+               Padding="5">
+    <Image Source="add_user.png" Scale=".95"  />
+    <Entry x:Name="userName" Placeholder="Name"/>
+    <Entry x:Name="pass" Placeholder="Password" IsPassword="true"/>
+    <Entry x:Name="urlImages" Placeholder="Url Image TODO"/>
+    <Button x:Name="createButton" Text="Create" BackgroundColor="#55cc55" Clicked="registerNewUser"/>
+  </StackLayout>
+</ContentPage>

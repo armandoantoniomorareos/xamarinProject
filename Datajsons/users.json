@@ -1,0 +1,19 @@
+{
+	"_id": {
+		"oid": "2"
+	},
+	"name": "user2",
+	"games": [{
+			"game_name": "futbolito",
+			"score": "2",
+			"result": "lost"
+		}, {
+			"game_name": "maquinita",
+			"score": "5",
+			"result": "won"
+		}
+
+
+	],
+	"profile_image": "https:\/\/drive.google.com\/uc?id=0BzpgCnXmnQZmZHVjRVZSNFJVSFU"
+}

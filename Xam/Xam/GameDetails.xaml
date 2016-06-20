@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xam.GameDetails">
+  <StackLayout>
+    <ListView x:Name="ScoreListView" >
+      <ListView.ItemTemplate >
+        <DataTemplate>
+          <ViewCell>
+            <RelativeLayout BackgroundColor="#eeeeff">
+              <Image x:Name="usrImg" Source="Icon.png"
+                     RelativeLayout.XConstraint =
+                            "{ConstraintExpression Type=RelativeToParent,
+                                Property=X,
+                                Factor=1,
+                                Constant=5}"/>
+              <Label x:Name="scoreLabel" Text="Score:" TextColor="#7777AA" FontSize="12"
+                    RelativeLayout.XConstraint =
+                            "{ConstraintExpression Type=RelativeToView,
+                                ElementName=usrImg,
+                                Property=Width,
+                                Factor=1,
+                                Constant=+30}"
+                           RelativeLayout.YConstraint =
+                            "{ConstraintExpression Type=RelativeToParent,
+                                Property=Y,
+                                Factor=1,
+                                Constant=+25}"/>
+              <Label Text ="{Binding score}" TextColor="#7777AA" FontSize="12"
+                     RelativeLayout.XConstraint =
+                            "{ConstraintExpression Type=RelativeToView,
+                                ElementName=scoreLabel,
+                                Property=X,
+                                Factor=1,
+                                Constant=+35}"
+                            RelativeLayout.YConstraint =
+                            "{ConstraintExpression Type=RelativeToParent,
+                                Property=Y,
+                                Factor=1,
+                                Constant=+25}"/>
+              <Label Text="{Binding usr_name}" TextColor="#7777AA" 
+                       FontSize="20" BackgroundColor="{Binding color}"
+                        RelativeLayout.XConstraint =
+                            "{ConstraintExpression Type=RelativeToView,
+                                ElementName=scoreLabel,
+                                Property=X,
+                                Factor=1,
+                                Constant=-10}"
+                            RelativeLayout.YConstraint =
+                            "{ConstraintExpression Type=RelativeToParent,
+                                Property=Y,
+                                Factor=1,
+                                Constant=+1}"/>
+            </RelativeLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+
+    </ListView>
+    <Button x:Name="AddNewGame" Text="Add New Game" Clicked="addNewMatch" BackgroundColor="#6666ff"/>
+    <Button x:Name="BestPlayer" Text="BestPlayer" Clicked="bestPlayer" BackgroundColor="#55cc55"/>
+  </StackLayout>
+  
+</ContentPage>

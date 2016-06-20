@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xam.NewGamePage">
+  <StackLayout VerticalOptions="FillAndExpand" Spacing="5">
+    <Image x:Name="newGameImage" Source="newGameImg.jpg"/>
+    <Entry x:Name="gameName" Placeholder="Game Name" />
+    <Entry x:Name="imageUrl" Placeholder="Image url" />
+    <Button x:Name="addNewGameButton" Text="Add new game" Clicked="addNewGame" BackgroundColor="#6666ff"/>
+    
+  </StackLayout>
+</ContentPage>
