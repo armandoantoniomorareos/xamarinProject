@@ -13,7 +13,7 @@ namespace Xam
     {
 
         public event PropertyChangedEventHandler PropertyChanged;
-        servers<LoginData> serverOperations;
+        ServerOperationManager<LoginData> serverOperations;
         string usr, password;
         public ICommand signUpButton { get; set; }
         public ICommand registerButton { get; set; }
@@ -22,7 +22,7 @@ namespace Xam
         {
             signUpButton = new Command(singUp);
             registerButton = new Command(registerNewUsr);
-            serverOperations = new servers<LoginData>();
+            serverOperations = new ServerOperationManager<LoginData>();
         }
 
 
@@ -67,12 +67,12 @@ namespace Xam
 
         public async void registerNewUsr()
         {
+			 await Navigation.PushAsync(new NewUserDialog(), true);
         }
 
 
         public string userName
         {
-
             set
             {
                 if (usr != value)
@@ -81,7 +81,6 @@ namespace Xam
                     OnPropertyChanged("userName");
                 }
             }
-
             get
             {
                 return usr;
