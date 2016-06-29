@@ -9,12 +9,10 @@ using Xamarin.Forms;
 namespace Xam
 {
 	public partial class LoginPage : ContentPage
-    {
-        ServerOperationManager<LoginData> serverOperations;
-        public LoginPage()
-        {
-            InitializeComponent();
-            serverOperations = new ServerOperationManager<LoginData>();
-        }
-    }
+	{
+		public LoginPage ()
+		{
+			InitializeComponent ();
+		}
+	}
 }
