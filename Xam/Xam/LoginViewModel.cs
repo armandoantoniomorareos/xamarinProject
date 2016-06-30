@@ -8,13 +8,25 @@ using Xamarin.Forms;
 
 namespace Xam
 {
-    public class LoginViewModel : ContentPage, INotifyPropertyChanged
+    public class LoginViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         ServerOperationManager<LoginData> serverOperations;
-        string usr, password;
+        static string usr, password;
         public ICommand signUpButton { get; set; }
         public ICommand registerButton { get; set; }
+
+        public void setPage(Type pageType,
+                             Action<Type> gotoExecute)
+        {
+            this.PageType = pageType;
+            this.PageName = pageType.Name;
+            this.GoToCommand = new Command<Type>(gotoExecute);
+
+            signUpButton = new Command(async () => await singUp());
+            registerButton = new Command(async () => await registerNewUsr());
+            serverOperations = new ServerOperationManager<LoginData>();
+        }
 
         public LoginViewModel()
         {
@@ -22,6 +34,14 @@ namespace Xam
             registerButton = new Command(async () => await registerNewUsr());
             serverOperations = new ServerOperationManager<LoginData>();
         }
+
+        public Type PageType { private set; get; }
+
+        public string PageName { private set; get; }
+
+        public ICommand GoToCommand { private set; get; }
+
+        public ICommand BrowseCommand { private set; get; }
 
 
         public string userName
@@ -60,11 +80,14 @@ namespace Xam
         }
 
 
-        public async Task singUp()
+        public async Task<string> singUp()
         {
-            if (usr == null || password == null)
+            string msn = "";
+
+            if (usr == null || password == null || usr =="" || password == "")
             {
-                DisplayAlert("Erro", "All the fields are requiered", "ok");
+
+                msn = "All the fields are requiered";
             }
             else
             {
@@ -74,32 +97,32 @@ namespace Xam
 
                     if (data.Count > 0 && data[0].pass.Equals(password))
                     {
-                        LoginInformation.getInstance().setIsLogged(true); //Loging success
-                        await DisplayAlert("TODO", "Login success TODO: Implement Navigation page", "ok");
-                        await Navigation.PushModalAsync(new MainPage());
+                        LoginInformation.getInstance().setIsLogged(true);
                     }
                     else
                     {
-                        await DisplayAlert("Error", "Error while trying to loggin, password or user name incorrect", "ok");
+                        msn = "User name or password incorrect";
                     }
                 }
                 catch (Exception err)
                 {
                     //Check for intertet coneccion problems
-                    string msn = "Please, check your internet conection";
+                    msn = "Please, check your internet conection";
                     if (err.Message.Contains("No address associated with hostname"))
-                        await DisplayAlert("Error", msn, "ok");
+                        return msn;
                     else
                     {
-                        await DisplayAlert("Error", err.Message, "ok");
+                        return err.Message;
                     }
                 }
+
             }
+            return msn;
         }
         
         public async Task registerNewUsr()
         {
-            await DisplayAlert("TODO", "Implement Navigation page", "ok");
+           // await DisplayAlert("TODO", "Implement Navigation page", "ok");
             /*NavigationPage nav = new NavigationPage(new LoginPage());
             await nav.PushAsync(new MainPage());*/
         }

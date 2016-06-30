@@ -50,7 +50,8 @@ namespace Xam
 
         async void logout(object sender, EventArgs e)
         {
-
+            LoginInformation.getInstance().setIsLogged(false);
+            await Navigation.PushAsync(new LoginPage());
         }
 
         //TODO

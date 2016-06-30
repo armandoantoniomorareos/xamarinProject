@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Xam"
+              xmlns:local="clr-namespace:Xam"
              x:Class="Xam.LoginPage">
  
-<ContentPage.BindingContext>
+<!--<ContentPage.BindingContext>
     <local:LoginViewModel />
-</ContentPage.BindingContext>
+</ContentPage.BindingContext>-->
   
 	<StackLayout VerticalOptions="FillAndExpand"
                HorizontalOptions="FillAndExpand"
@@ -14,10 +14,18 @@
                Spacing="10"
                Padding="5">
     <Image x:Name="usr_icon" Source="login_icon2.png" Scale="1.0"/>
-    <Entry x:Name ="userName" Text="{Binding userName}" Placeholder="UserName" BackgroundColor="#444444" Opacity="9"/>
-    <Entry x:Name ="pass" Text="{Binding pass}" IsPassword="true" Placeholder="Password" BackgroundColor="#555555" Opacity=".8" />
-    <Button x:Name ="signUp"  Command="{Binding signUpButton}" Text="SignUp" IsEnabled="true"  BackgroundColor="#55cc55" />
-    <Button x:Name ="Register" Command="{Binding registerButton}" Text="Register" IsEnabled="true" BackgroundColor="#6666ff"/>
+    <Entry x:Name ="userName" Text="{Binding userName}" Placeholder="UserName" BackgroundColor="#444444" Opacity="9">
+      <Entry.BindingContext>
+        <local:LoginViewModel></local:LoginViewModel>
+      </Entry.BindingContext>
+    </Entry>
+    <Entry x:Name ="pass" Text="{Binding pass}" IsPassword="true" Placeholder="Password" BackgroundColor="#555555" Opacity=".8" >
+      <Entry.BindingContext>
+        <local:LoginViewModel></local:LoginViewModel>
+      </Entry.BindingContext>
+    </Entry>
+    <Button x:Name ="signUp"  Command="{Binding signUpButton}" Text="SignUp" IsEnabled="true"  BackgroundColor="#55cc55" Clicked="signupButton"/>
+    <Button x:Name ="Register" Command="{Binding registerButton}" Text="Register" IsEnabled="true" BackgroundColor="#6666ff" Clicked="registerButton"/>
   </StackLayout>
 
 </ContentPage>
