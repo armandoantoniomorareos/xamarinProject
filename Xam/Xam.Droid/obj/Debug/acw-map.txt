@@ -1,3 +1,7 @@
+CustomControl.Android.MyEntryRenderer, Xam.Droid;md513d391834a071764b07f87435a8432c5.MyEntryRenderer
+CustomControl.Android.MyEntryRenderer, Xam.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md513d391834a071764b07f87435a8432c5.MyEntryRenderer
+CustomControl.Android.MyEntryRenderer;md513d391834a071764b07f87435a8432c5.MyEntryRenderer
+customcontrol.android.MyEntryRenderer;md513d391834a071764b07f87435a8432c5.MyEntryRenderer
 Xam.Droid.MainActivity, Xam.Droid;md5f491b4996e555001a02b4a4e420c10a3.MainActivity
 Xam.Droid.MainActivity, Xam.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5f491b4996e555001a02b4a4e420c10a3.MainActivity
 Xam.Droid.MainActivity;md5f491b4996e555001a02b4a4e420c10a3.MainActivity
