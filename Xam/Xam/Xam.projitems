@@ -22,6 +22,7 @@
       <DependentUpon>GamesPageView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)InterfaceLogin.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ListGamesData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LoginData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LoginInformation.cs" />
@@ -34,6 +35,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MyEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NewGamePage.xaml.cs">
       <DependentUpon>NewGamePage.xaml</DependentUpon>
       <SubType>Code</SubType>

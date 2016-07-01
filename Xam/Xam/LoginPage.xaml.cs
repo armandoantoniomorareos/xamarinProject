@@ -16,6 +16,11 @@ namespace Xam
         public LoginPage()
         {
             InitializeComponent();
+            
+            if(DependencyService.Get<InterfaceLogin>().getToken() != "") //TODO move this to loginViewModel
+            {
+                Navigation.PushAsync(new MainPage());
+            }
             m = new LoginViewModel();
         }
 

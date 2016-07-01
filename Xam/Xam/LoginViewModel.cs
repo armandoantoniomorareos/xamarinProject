@@ -98,6 +98,7 @@ namespace Xam
                     if (data.Count > 0 && data[0].pass.Equals(password))
                     {
                         LoginInformation.getInstance().setIsLogged(true);
+                        DependencyService.Get<InterfaceLogin>().setToken(pass);
                     }
                     else
                     {

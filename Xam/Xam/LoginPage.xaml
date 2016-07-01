@@ -14,16 +14,28 @@
                Spacing="10"
                Padding="5">
     <Image x:Name="usr_icon" Source="login_icon2.png" Scale="1.0"/>
-    <Entry x:Name ="userName" Text="{Binding userName}" Placeholder="UserName" BackgroundColor="#444444" Opacity="9">
+      <local:MyEntry x:Name ="userName" Text="{Binding userName}" Placeholder="User Name">
+      <local:MyEntry.BindingContext>
+        <local:LoginViewModel></local:LoginViewModel>
+      </local:MyEntry.BindingContext>
+    </local:MyEntry>
+    <!--<Entry x:Name ="userName" Text="{Binding userName}" Placeholder="UserName" BackgroundColor="#444444" Opacity="9">
       <Entry.BindingContext>
         <local:LoginViewModel></local:LoginViewModel>
       </Entry.BindingContext>
-    </Entry>
-    <Entry x:Name ="pass" Text="{Binding pass}" IsPassword="true" Placeholder="Password" BackgroundColor="#555555" Opacity=".8" >
+    </Entry>-->
+    
+    <local:MyEntry x:Name ="pass" Text="{Binding pass}" IsPassword="true" Placeholder="Password">
+      <local:MyEntry.BindingContext>
+        <local:LoginViewModel></local:LoginViewModel>
+      </local:MyEntry.BindingContext>
+    </local:MyEntry>
+    
+    <!--<Entry x:Name ="pass" Text="{Binding pass}" IsPassword="true" Placeholder="Password" BackgroundColor="#555555" Opacity=".8" >
       <Entry.BindingContext>
         <local:LoginViewModel></local:LoginViewModel>
       </Entry.BindingContext>
-    </Entry>
+    </Entry>-->
     <Button x:Name ="signUp"  Command="{Binding signUpButton}" Text="SignUp" IsEnabled="true"  BackgroundColor="#55cc55" Clicked="signupButton"/>
     <Button x:Name ="Register" Command="{Binding registerButton}" Text="Register" IsEnabled="true" BackgroundColor="#6666ff" Clicked="registerButton"/>
   </StackLayout>

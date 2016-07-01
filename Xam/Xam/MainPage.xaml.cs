@@ -50,7 +50,8 @@ namespace Xam
 
         async void logout(object sender, EventArgs e)
         {
-            LoginInformation.getInstance().setIsLogged(false);
+            LoginInformation.getInstance().setIsLogged(false); // TODO remove this, it is not necessary any more
+            DependencyService.Get<InterfaceLogin>().setToken("");
             await Navigation.PushAsync(new LoginPage());
         }
 
